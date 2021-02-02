@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function DaThuc(n) {
+        this.n = n;
+        this.heSo = [];
+
+        this.nhapDaThuc = function () {
+            for(let i = n; i>=0; i--) {
+                this.heSo[i] = prompt("Nhap vao he so bac" + i);
+            }
+        }
+
+        this.inDaThuc = function () {
+            let str = ""
+            for (let i =n; i>= 1; i--) {
+                str += this.heSo[i] + "x^" + i + "+";
+            }
+            str += this.heSo[0];
+            return str;
+        }
+    }
+
+    let n = prompt("Nhap vao bac da thuc: ");
+    let dt = new DaThuc(n);
+    dt.nhapDaThuc();
+    alert(dt.inDaThuc());
+</script>
+<!--<script>-->
+<!--    let DaThuc = function (x,n){-->
+<!--        this.x = x;-->
+<!--        this.n = n;-->
+<!--        this.caculatate = function (){-->
+<!--            let sum = 0;-->
+<!--            let show = ""-->
+<!--            for (let i = n; i >0; i&#45;&#45;) {-->
+<!--                sum += this.x**i + 1;-->
+<!--                show += "x ^ "+i+"+"-->
+<!--            }-->
+<!--            document.write(show + this.n+"<br>")-->
+<!--            return sum-->
+<!--        }-->
+<!--    }-->
+<!--    let dathuc1 = new DaThuc(2,5);-->
+<!--    let dathuc2 = new DaThuc(3,4);-->
+<!--    document.write( 'Tổng 2 đa thức là : ' + (dathuc1.caculatate() + dathuc2.caculatate()))-->
+<!--</script>-->
+</body>
+</html>
